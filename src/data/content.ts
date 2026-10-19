@@ -9,16 +9,17 @@ export const doctor = {
 }
 
 export interface NavItem {
-  path: string
+  /** id секции на главной странице (якорь #id). */
+  id: string
   label: string
 }
 
-/** Каждый пункт меню — отдельная страница (контента пока нет, показывается заглушка). */
+/** Пункты меню — разделы главной страницы, переход по якорю с плавной прокруткой. */
 export const navItems: NavItem[] = [
-  { path: '/about', label: 'О враче' },
-  { path: '/services', label: 'Услуги' },
-  { path: '/blog', label: 'Блог' },
-  { path: '/cooperation', label: 'Сотрудничество' },
+  { id: 'about', label: 'О враче' },
+  { id: 'services', label: 'Услуги' },
+  { id: 'blog', label: 'Блог' },
+  { id: 'cooperation', label: 'Сотрудничество' },
 ]
 
 export const footerText = 'Все права защищены.'

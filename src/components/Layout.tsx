@@ -4,6 +4,8 @@ import Header from './Header'
 import Footer from './Footer'
 import BookingModal from './BookingModal'
 import Toast from './Toast'
+import Decor from './Decor'
+import { useScrollEffects } from '../hooks/useScrollEffects'
 
 export interface LayoutContext {
   onBook: () => void
@@ -16,6 +18,7 @@ export default function Layout() {
   const [toast, setToast] = useState<string | null>(null)
   const toastTimer = useRef<number | undefined>(undefined)
   const { pathname } = useLocation()
+  useScrollEffects()
 
   const openModal = useCallback(() => setModalOpen(true), [])
   const closeModal = useCallback(() => setModalOpen(false), [])
@@ -29,13 +32,19 @@ export default function Layout() {
 
   useEffect(() => () => window.clearTimeout(toastTimer.current), [])
 
-  // При переходе между страницами возвращаемся к началу страницы.
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  // При переходе между страницами — к началу; если в адресе есть #якорь — к нужному разделу.
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    const target = id ? document.getElementById(id) : null
+    if (target) target.scrollIntoView()
+    else window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <>
+      <Decor />
       <Header onBook={openModal} />
-      <main>
+      <main key={pathname} className="page-enter">
         <Outlet context={{ onBook: openModal } satisfies LayoutContext} />
       </main>
       <Footer />
