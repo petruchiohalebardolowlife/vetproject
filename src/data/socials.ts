@@ -13,14 +13,14 @@ export interface Social {
 }
 
 export const socials: Social[] = [
-  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/@Vetrinar./shorts', image: youtube },
   { id: 'instagram', name: 'Instagram', url: 'https://www.instagram.com/veterinar.ot.boga/', image: instagram },
   { id: 'telegram', name: 'Telegram', url: 'https://t.me/talkVeterinarOtBoga', image: telegram },
+  { id: 'vk', name: 'VK', url: 'https://vk.ru/vetexpertkirillsachkov', image: vk },
   {
     id: 'tiktok',
     name: 'TikTok',
     url: 'https://www.tiktok.com/@veterinar.ot.boga?_r=1&_t=ZS-9AZiQK4y6BI',
     image: tiktok,
   },
-  { id: 'vk', name: 'VK', url: 'https://vk.ru/vetexpertkirillsachkov', image: vk },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/@Vetrinar./shorts', image: youtube },
 ]

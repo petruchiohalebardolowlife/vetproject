@@ -8,14 +8,14 @@ export default function AboutSection() {
       <div className="container">
         <SectionHead id="about-title" eyebrow="01 — О враче" title={about.title} lead={about.lead} />
 
-        <div className="about">
-          <Reveal className="about__card">
-            <blockquote className="about__quote">
-              <span className="about__quote-mark" aria-hidden="true">
-                “
-              </span>
-              {about.quote}
-            </blockquote>
+        <Reveal className="about__card">
+          <blockquote className="about__quote">
+            <span className="about__quote-mark" aria-hidden="true">
+              “
+            </span>
+            {about.quote}
+          </blockquote>
+          <div className="about__body">
             {about.paragraphs.map((text) => (
               <p key={text} className="about__text">
                 {text}
@@ -28,20 +28,8 @@ export default function AboutSection() {
                 </li>
               ))}
             </ul>
-          </Reveal>
-
-          <ul className="about__stats">
-            {about.stats.map((stat, i) => (
-              <Reveal as="li" key={stat.label} delay={i * 120} variant="scale" className={`stat stat--${i + 1}`}>
-                <span className="stat__value">
-                  {stat.value}
-                  {stat.suffix}
-                </span>
-                <span className="stat__label">{stat.label}</span>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

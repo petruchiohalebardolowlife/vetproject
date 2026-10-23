@@ -6,6 +6,8 @@ export const doctor = {
   description: 'Здесь будет описание врача.',
   photo: doctorPhoto as string | undefined,
   photoAlt: 'Фотография Кирилла Сачкова',
+  /** Текст в круглом бейдже на фото. */
+  badge: { lead: 'Более', value: '15 лет', rest: 'заботы о питомцах' },
 }
 
 export interface NavItem {

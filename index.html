@@ -9,6 +9,12 @@
       content="Кирилл Сачков — ветеринарный врач. Запись на приём, услуги, блог и социальные сети."
     />
     <meta name="theme-color" content="#D8EBF2" />
+    <script>
+      // Запомненная цветовая гамма применяется до отрисовки, чтобы не было вспышки.
+      try {
+        if (localStorage.getItem('palette') === 'olive') document.documentElement.dataset.theme = 'olive'
+      } catch (e) {}
+    </script>
     <title>Кирилл Сачков — ветеринар</title>
   </head>
   <body>

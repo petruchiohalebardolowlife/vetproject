@@ -36,18 +36,11 @@ export default function Hero({ onBook }: Props) {
             )}
           </div>
           <div className="hero__badge">
-            <svg className="hero__badge-ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-              <defs>
-                <path id="badge-circle" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" />
-              </defs>
-              <circle cx="50" cy="50" r="49" className="hero__badge-bg" />
-              <text className="hero__badge-text">
-                <textPath href="#badge-circle" textLength="249" lengthAdjust="spacing">
-                  ВЕТЕРИНАРНЫЙ ВРАЧ • ВЕТЕРИНАРНЫЙ ВРАЧ •
-                </textPath>
-              </text>
-            </svg>
-            <PawIcon className="hero__badge-paw" />
+            <p className="hero__badge-text">
+              <span className="hero__badge-lead">{doctor.badge.lead}</span>
+              <span className="hero__badge-value">{doctor.badge.value}</span>
+              <span className="hero__badge-rest">{doctor.badge.rest}</span>
+            </p>
           </div>
         </div>
 

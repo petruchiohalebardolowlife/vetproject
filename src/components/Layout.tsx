@@ -5,6 +5,7 @@ import Footer from './Footer'
 import BookingModal from './BookingModal'
 import Toast from './Toast'
 import Decor from './Decor'
+import PaletteToggle from './PaletteToggle'
 import { useScrollEffects } from '../hooks/useScrollEffects'
 
 export interface LayoutContext {
@@ -50,6 +51,7 @@ export default function Layout() {
       <Footer />
       <BookingModal open={modalOpen} onClose={closeModal} onSubmitted={handleSubmitted} />
       <Toast message={toast} />
+      <PaletteToggle />
     </>
   )
 }
